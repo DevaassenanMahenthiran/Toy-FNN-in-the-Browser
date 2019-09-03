@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+main {
+    width: 60%;
+    margin: 50px auto;
+}
+
+section {
+    margin: 40px 0;
+}
+
+canvas {
+   display: block; 
+}
+
+input[type="number"]::-webkit-outer-spin-button, input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.train {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.train__box {
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    height: fit-content;
+    border-radius: 6px;
+}
+
+.train__main {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    justify-items: center;
+    align-items: center;
+}
+
+.train__text {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.train__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.train__form-group {
+    display: flex;
+}
+
+.train__input {
+    display: block;
+    height: 80px;
+    width: 80px;
+    margin: 0 20px;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 2rem;
+    text-align: center;
+    outline: none;
+    border: 1px black solid;
+}
+
+.train__submit {
+    background: transparent;
+    border: 1px black solid;
+    padding: 10px;
+    cursor: pointer;
+    outline: none;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+.train__output {
+    text-align: center;
+}
+
+.train__p5-canvas {
+    padding: 10px;
+    background: rgb(169, 168, 168);
+    flex: 1;
+    display: block;
+}
+
+.train__controls {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 10px 5px 5px;
+    background: rgb(237, 237, 237);
+}
+
+.train__button {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.train__button--play {
+    color: rgb(78, 215, 106);
+}
+
+.train__button--pause {
+    color: rgb(255, 91, 91);
+}
+
+.train__button--reset {
+    color: rgb(110, 158, 255);
+}
+
+.train__button--right {
+    align-self: flex-start;
+}
+
+.data__img {
+    display: block;
+    margin: 0 auto;
+}

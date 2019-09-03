@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ title }}</title>
+    <!-- local libraries -->
+    <script src="/static/libs/p5.min.js"></script>
+    <script src="/static/libs/p5.dom.min.js"></script>
+    <script src="/static/libs/fnn.js"></script>
+    <!-- CDN libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/6.2.0/math.js"></script>
+    <script src="https://kit.fontawesome.com/ee9fd67653.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+<body>
+    <main>
+        <section class="hero">
+            <h1 class="hero__title">{{ title }}</h1>
+            <h2 class="hero__subtitle"></h2>
+        </section>            
+        <section class="intro">
+            <p class="body__text">The XOr problem in machine learning is an excellent "hello world" problem to get started in your machine learning journey for 2 main reasons.</p>
+            <ol class="body__num-list">
+                <li class="body__list-item">
+                    <p class="body__text">It's not too complex and does not need too many neurons or hidden layers to solve.</p>
+                </li>
+                <li class="body__list-item">
+                    <p class="body__text">It presents it self as a non-linear problem so it still provides a challenge.</p>
+                </li>
+            </ol>
+        </section>
+        <section class="train">
+            <h3 class="train__heading">Demo</h3>
+            <div class="train__box" id="train__box">
+                <div class="train__controls">
+                    <i class="fas fa-sync-alt fa-sm train__button train__button--right train__button--reset"></i>
+                    <i class="fas fa-play fa-sm train__button train__button--play"></i>
+                </div>
+                <div class="train__main" id="train__main">
+                    <script src="/static/js/demo.js"></script>
+                    <div class="train__ui">
+                        <p class="train__text">Click the <i class="fas fa-play fa-sm train__button--play"></i> button to start training</p>
+                        <form class="train__form">
+                            <div class="train__form-group">
+                                <input type="number" id="input1" class="train__input" min="0" max="1" value="0">
+                                <input type="number" id="input2" class="train__input" min="0" max="1" value="0">
+                            </div>
+                            <p class="train__text" id="input-vec">Input Vector: [0, 0]</p>
+                            <button type="submit" class="train__submit">Guess</button>
+                        </form>
+                        <p class="train__text train__output">Output Vector: []</p>
+                    </div>
+                </div>
+            </div>         
+        </section>
+        <section class="data">
+            <h3 class="data__heading">Dataset</h3>
+            <img src="https://t1.daumcdn.net/cfile/tistory/997FED415A324FEF01" alt="XOr Dataset" class="data__img">
+        </section>
+        <section class="expl">
+            <h3 class="expl__heading">Explanation of the Demo</h3>
+            <p class="expl__text">I decided to use 3D rendering to more interestingly convey the function that the neural network ends up with after training and learning the pattern of the dataset. The z coordinate reperesents the output, the x and the y coordinates represent the 1st and 2nd inputs respectively. The more red a point is, the closer to 1 the output is and the more blue a point is, the closer to 0 the output is. If the point is black, the output is near 0.5.</p>
+            <p class="expl__text">As you can see, the neural network indeed does find a function to accurately model the training dataset after training. You can use the little interface beside the rendering to test the neural network. Another thing to note is that there are different correct solutions, refresh the neural network and train it a few times to see what I mean. As long as the solution is correct for the training data provided, it is correct. If you'd like to make the solution a certain shape, just add more i/o pairs to the training data that are inline with that shape. Also, it is quite clear that there is no way to solve this problem with linear equations, an accurate function has to be non-linear. No matter how many times you refresh and train the neural network, it will never find a linear solution simply because there isn't one. This is why a single layer perceptron is unable to solve the XOr problem. This neural network uses 1 hidden layer with 3 neurons making up for 2 sets of weights which is adequate.</p>
+        </section>
+        <section class="sources">
+            <h3 class="sources__heading">Sources</h3>
+            <p class="sources__text">Here are a few sources that really helped me understand how a simple FNN works and how to implement one:</p>
+            <ul class="sources__list">
+                <li class="sources__source"><a href="https://www.youtube.com/watch?v=XJ7HLz9VYz0&list=PLRqwX-V7Uu6aCibgK1PTWWu9by6XFdCfh">Daniel Shiffman's Playlist on neural networks; The Coding Train</a></li>
+                <li class="sources__source"><a href="https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3Blue1Brown's Playlist explaining the neural network</a></li>
+                <li class="sources__source"><a href="https://towardsdatascience.com/how-to-build-your-own-neural-network-from-scratch-in-python-68998a08e4f6">James Loy's Tutorial on implementing a simple FNN in Python with only Numpy</a></li>
+            </ul>
+        </section>
+        <section class="use">
+            <h3 class="use__heading">Terms of Use</h3>
+            <p class="use__text">Feel free to use any of the code from the Github Repository at <a href="https://github.com/DevaaJS/Toy-FNN-in-the-Browser">https://github.com/DevaaJS/Toy-FNN-in-the-Browser</a> that holds all the code to make this make project work. Referencing me is not needed, but if you do, I'd appreciate it.</p>
+        </section>
+        <p class="text"><strong>DISCLAIMER: </strong>This is very much a neural network for beginners, to grasp the understanding of how a neural network actually works, hence the term "toy". I am very much in the learning phase and I hope to be able to help other beginners with the 3D visualization on how a neural network finds a solution (function) that correctly and accurately models the training data inputs and outputs and providing sample code. So, I also strongly recommend checking out the sources listed above if you are still confused. This neural network is also missing many real world features such as optimization algorithms, ReLU instead of Sigmoid for the non-linear function, a configurable number of hidden layers and not to mention how there are different types of neural networks suited for different tasks. So with this in mind, have fun and remember that this is something to build upon.</p>
+    </main>
+</body>
+<script src="/static/js/main.js"></script>
+</html>
